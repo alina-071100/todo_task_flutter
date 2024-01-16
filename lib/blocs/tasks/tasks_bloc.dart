@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -11,7 +10,7 @@ part 'tasks_state.dart';
 class TasksBloc extends Bloc<TaskEvent, TasksState> {
   final TaskRepository _taskRepository;
 
-  TasksBloc(this._taskRepository) : super(TasksLoaded()) {
+  TasksBloc(this._taskRepository) : super(const TasksLoaded()) {
     on<LoadTask>(_onLoadTask);
     on<AddTask>(_onAddTask);
     on<DeleteTask>(_onDeleteTask);
